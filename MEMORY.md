@@ -1,0 +1,3 @@
+- [Sidebar hover-only behavior](memory/sidebar-hover-only.md) — Sidebar appears only on mouse hover using React useState and mouse events
+- [Human-like animations](memory/human-animations.md) — Added float, pulse, wiggle, and gradientShift animations for more lifelike feel
+- [Thematic icon updates](memory/thematic-icons.md) — Replaced abstract symbols with meaningful icons (house, magnifying glass, arrows, etc.) that work with site theme
