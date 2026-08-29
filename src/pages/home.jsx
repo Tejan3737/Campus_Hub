@@ -41,8 +41,7 @@ export function Home() {
           onHover={() => setCollapsed((value) => !value)}
         />
         <main className="page-main">
-          <h1>{"DashBoard"}</h1>
-          <p className="eyebrow">Your dashboard</p>
+          <h1>Welcome Back , {"user.name"}</h1>
         </main>
       </div>
     </div>

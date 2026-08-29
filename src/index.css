@@ -606,7 +606,7 @@ body::after {
 .sidebar {
   width: 268px;
   flex-shrink: 0;
-  padding: 18px 14px;
+  padding: 1px 14px;
   background: var(--sidebar-bg);
   border-right: 1px solid var(--sidebar-border);
   box-shadow: 8px 0 24px rgba(11, 31, 77, 0.06);
@@ -693,15 +693,15 @@ body::after {
 .sidebar-link {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   width: 100%;
   border: 1px solid transparent;
-  border-radius: 12px;
+  border-radius: 0 12px 12px 0;
   background: transparent;
   color: #000000;
   cursor: pointer;
   font: inherit;
-  font-weight: 70;
+  Font-weight: light;
   padding: 11px 12px;
   text-align: left;
   transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
@@ -716,10 +716,9 @@ body::after {
   outline: none;
 }
 .sidebar-link.is-active {
-  background: rgba(185, 213, 255, 0.644);
-  font-weight: 700;
+  background: linear-gradient(to right,  #6c5ce7 4px, rgb(174, 206, 255 , 0.9) 4px, rgba(185, 213, 255 , 0.9) 0%);
+  font-weight: 1000;
   color: #0d39bc;
-  box-shadow: 0 10px 22px rgba(204, 206, 211, 0.2);
 }
 .sidebar-icon {
   display: grid;
