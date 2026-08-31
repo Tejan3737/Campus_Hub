@@ -9,32 +9,24 @@ import {
   Megaphone,
   User,
   Settings,
+  Users
 } from "lucide-react";
-
-const pages = [
-  { id: "home", label: "DashBoard" },
-  { id: "lost-and-found", label: "Lost and Found" },
-  { id: "buy-and-sell", label: "Buy and Sell" },
-  { id: "registrations", label: "Registrations" },
-  { id: "skill-exchange", label: "Skill Exchange" },
-  { id: "notices", label: "Notices" },
-];
-
-const account = [
-  { id: "profile", label: "Profile" },
-  { id: "settings", label: "Settings" },
-];
 
 function NavIcon({ id }) {
   const icons = {
-    home: <LayoutDashboard size={18} fill = "currentColor"/>,
+    home: <LayoutDashboard size={18} fill="currentColor" />,
     "lost-and-found": <Search size={18} />,
     "buy-and-sell": <BookOpen size={18} />,
     registrations: <CalendarDays size={18} />,
-    "skill-exchange": <Lightbulb size={18} fill = "currentColor"/>,
+    "skill-exchange": <Lightbulb size={18} fill="currentColor" />,
     notices: <Megaphone size={18} />,
     profile: <User size={18} />,
     settings: <Settings size={18} />,
+    members: <Users size={18} />,
+    announcements: <Megaphone size={18} />,
+    events: <CalendarDays size={18} />,
+    students: <User size={18} />,
+    clubs: <Users size={18} />,
   };
 
   return (
@@ -58,8 +50,41 @@ function SidebarButton({ item, active, onSelect, collapsed }) {
   );
 }
 
-export function Sidebar({ active = "home", onSelect }) {
+export function Sidebar({ user = "student", active = "home", onSelect }) {
   const [isCollapsed, setIsCollapsed] = React.useState(true);
+
+  let pages = [];
+  if (user === "student") {
+    pages = [
+      { id: "home", label: "DashBoard" },
+      { id: "lost-and-found", label: "Lost and Found" },
+      { id: "buy-and-sell", label: "Buy and Sell" },
+      { id: "registrations", label: "Registrations" },
+      { id: "skill-exchange", label: "Skill Exchange" },
+      { id: "notices", label: "Notices" },
+    ];
+  } else if (user === "admin") {
+    pages = [
+      { id: "home", label: "DashBoard" },
+      { id: "students", label: "Students" },
+      { id: "clubs", label: "Clubs" },
+      { id: "events", label: "Events" },
+      { id: "notices", label: "Notices" },
+      { id: "lost-and-found", label: "Lost and Found" }
+    ];
+  } else if (user === "club") {
+    pages = [
+      { id: "home", label: "DashBoard" },
+      { id: "events", label: "Events" },
+      { id: "members", label: "Members" },
+      { id: "announcements", label: "Announcements" }
+    ];
+  }
+
+  const account = [
+    { id: "profile", label: "Profile" },
+    { id: "settings", label: "Settings" },
+  ];
 
   return (
     <aside
@@ -100,6 +125,5 @@ export function Sidebar({ active = "home", onSelect }) {
         </nav>
       </div>
     </aside>
-    
   );
 }
