@@ -8,6 +8,7 @@ import { EVENTS } from "../../data/events";
 export function Home() {
   const [userType, setUserType] = useState("student"); // 'student', 'admin', or 'club'
   const [page, setPage] = useState("home");
+  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [theme, setTheme] = useState(
     () => localStorage.getItem("theme") || "light",
   );
@@ -26,9 +27,19 @@ export function Home() {
           setTheme((value) => (value === "dark" ? "light" : "dark"))
         }
         notificationCount={3}
+        mobileMenuOpen={mobileSidebarOpen}
+        onToggleMobileMenu={() => setMobileSidebarOpen((value) => !value)}
       />
       <div className="app-body">
-        <Sidebar user={userType} active={page} onSelect={setPage} />
+        <Sidebar
+          user={userType}
+          active={page}
+          onSelect={(nextPage) => {
+            setPage(nextPage);
+            setMobileSidebarOpen(false);
+          }}
+          isMobileOpen={mobileSidebarOpen}
+        />
         <main className="page-main">
           <h1>Welcome Back, Tejan</h1>
           <div className="page-content">

@@ -7,12 +7,26 @@ export function Navbar({
   theme = "light",
   onToggleTheme,
   notificationCount = 0,
+  mobileMenuOpen = false,
+  onToggleMobileMenu,
 }) {
   const [query, setQuery] = useState("");
 
   return (
     <header id="navbar" className="navbar">
       <nav className="nav-container" aria-label="Main navigation">
+        <button
+          type="button"
+          className={mobileMenuOpen ? "nav-mobile-toggle is-open" : "nav-mobile-toggle"}
+          onClick={onToggleMobileMenu}
+          aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={mobileMenuOpen}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
         <form
           className="nav-search"
           role="search"

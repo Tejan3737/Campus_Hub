@@ -36,13 +36,12 @@ function NavIcon({ id }) {
   );
 }
 
-function SidebarButton({ item, active, onSelect, collapsed }) {
+function SidebarButton({ item, active, onSelect }) {
   return (
     <button
       type="button"
       className={active === item.id ? "sidebar-link is-active" : "sidebar-link"}
       onClick={() => onSelect?.(item.id)}
-      title={collapsed ? item.label : undefined}
     >
       <NavIcon id={item.id} />
       <span className="sidebar-label">{item.label}</span>
@@ -50,8 +49,7 @@ function SidebarButton({ item, active, onSelect, collapsed }) {
   );
 }
 
-export function Sidebar({ user = "student", active = "home", onSelect }) {
-  const [isCollapsed, setIsCollapsed] = React.useState(true);
+export function Sidebar({ user = "student", active = "home", onSelect, isMobileOpen = false }) {
 
   let pages = [];
   if (user === "student") {
@@ -88,9 +86,10 @@ export function Sidebar({ user = "student", active = "home", onSelect }) {
 
   return (
     <aside
-      className={isCollapsed ? "sidebar is-collapsed" : "sidebar"}
-      onMouseEnter={() => setIsCollapsed(false)}
-      onMouseLeave={() => setIsCollapsed(true)}
+      className={[
+        "sidebar",
+        isMobileOpen ? "mobile-open" : "",
+      ].filter(Boolean).join(" ")}
       aria-label="Page navigation"
     >
       <div className="sidebar-top">
@@ -106,7 +105,6 @@ export function Sidebar({ user = "student", active = "home", onSelect }) {
             item={item}
             active={active}
             onSelect={onSelect}
-            collapsed={isCollapsed}
           />
         ))}
       </nav>
@@ -119,7 +117,6 @@ export function Sidebar({ user = "student", active = "home", onSelect }) {
               item={item}
               active={active}
               onSelect={onSelect}
-              collapsed={isCollapsed}
             />
           ))}
         </nav>
