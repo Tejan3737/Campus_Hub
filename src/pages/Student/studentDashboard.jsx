@@ -12,11 +12,20 @@ export function Home() {
   const [theme, setTheme] = useState(
     () => localStorage.getItem("theme") || "light",
   );
+  const [eventPage, setEventPage] = useState(0);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
   }, [theme]);
+
+  // Show 2 events per page, navigate with prev/next arrows
+  const eventsPerPage = 2;
+  const totalEventPages = Math.ceil(EVENTS.length / eventsPerPage);
+  const pageEvents = EVENTS.slice(
+    eventPage * eventsPerPage,
+    eventPage * eventsPerPage + eventsPerPage,
+  );
 
   return (
     <div className="app-shell">
@@ -47,20 +56,46 @@ export function Home() {
               <h2>Recent Notices</h2>
             </div>
             <div className="side">
-              <div className="featured events">
-                <p>Featured Events</p>
-                {EVENTS.slice(0, 2).map((event) => (
-                  <Card
-                    key={event.id}
-                    title={event.title}
-                    location={event.location}
-                    imageUrl={event.image}
-                  />
-                ))}
-              </div>
-              <div className="featured events">
-                <p>Community Updates</p>
-              </div>
+              <section className="featured events">
+                <div className="featured-header">
+                  <p>Featured Events</p>
+                  <div className="featured-nav">
+                    <button
+                      type="button"
+                      className="featured-arrow"
+                      onClick={() => setEventPage((p) => Math.max(0, p - 1))}
+                      disabled={eventPage === 0}
+                      aria-label="Previous events"
+                    >
+                      ‹
+                    </button>
+                    <button
+                      type="button"
+                      className="featured-arrow"
+                      onClick={() =>
+                        setEventPage((p) => Math.min(totalEventPages - 1, p + 1))
+                      }
+                      disabled={eventPage === totalEventPages - 1}
+                      aria-label="Next events"
+                    >
+                      ›
+                    </button>
+                  </div>
+                </div>
+                <div className="featured-cards">
+                  {pageEvents.map((event) => (
+                    <Card
+                      key={event.id}
+                      title={event.title}
+                      location={event.location}
+                      imageUrl={event.image}
+                    />
+                  ))}
+                </div>
+              </section>
+              <section className="featured events">
+                <p>Community Activities</p>
+              </section>
             </div>
           </div>
         </main>

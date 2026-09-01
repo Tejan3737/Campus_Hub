@@ -17,9 +17,9 @@ export const EVENTS = [
 
   {
     id: 2,
-    title: "Inter-College Football Tournament",
+    title: "Inter-College Badminton Tournament",
     description:
-      "Students from different colleges compete in an exciting football tournament.",
+      "Students from different colleges compete in an exciting badminton tournament.",
     category: "Sports",
     date: "2026-09-20",
     time: "08:00 AM",

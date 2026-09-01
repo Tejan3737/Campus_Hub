@@ -1,5 +1,5 @@
+import { useEffect, useRef, useState } from "react";
 import logo from "../assets/logo.png";
-import React from "react";
 import {
   LayoutDashboard,
   Search,
@@ -84,14 +84,54 @@ export function Sidebar({ user = "student", active = "home", onSelect, isMobileO
     { id: "settings", label: "Settings" },
   ];
 
+  const sidebarRef = useRef(null);
+  const [indicator, setIndicator] = useState(null);
+
+  function measureActive() {
+    const root = sidebarRef.current;
+    if (!root) return;
+    const activeBtn = root.querySelector(".sidebar-link.is-active");
+    if (!activeBtn) return;
+    const rootRect = root.getBoundingClientRect();
+    const btnRect = activeBtn.getBoundingClientRect();
+    setIndicator({
+      top: btnRect.top - rootRect.top,
+      height: btnRect.height,
+    });
+  }
+
+  // Re-seat the bubble whenever the active link changes
+  useEffect(() => {
+    measureActive();
+  }, [active]);
+
+  // Measure on mount + when the sidebar re-sizes / re-renders
+  useEffect(() => {
+    const id = window.setTimeout(measureActive, 60);
+    window.addEventListener("resize", measureActive);
+    return () => {
+      window.clearTimeout(id);
+      window.removeEventListener("resize", measureActive);
+    };
+  }, []);
+
   return (
     <aside
+      ref={sidebarRef}
       className={[
         "sidebar",
         isMobileOpen ? "mobile-open" : "",
       ].filter(Boolean).join(" ")}
       aria-label="Page navigation"
     >
+      {indicator && (
+        <span
+          className="sidebar-indicator"
+          style={{ top: indicator.top, height: indicator.height }}
+          aria-hidden="true"
+        />
+      )}
+
       <div className="sidebar-top">
         <button type="button" className="sidebar-logo" onClick={() => onSelect?.("home")} aria-label="Go home">
           <img src={logo} alt="MyApp" className="logo-image" />
