@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 import {
   LayoutDashboard,
@@ -36,52 +37,58 @@ function NavIcon({ id }) {
   );
 }
 
-function SidebarButton({ item, active, onSelect }) {
+function SidebarButton({ item, onSelect }) {
   return (
-    <button
-      type="button"
-      className={active === item.id ? "sidebar-link is-active" : "sidebar-link"}
-      onClick={() => onSelect?.(item.id)}
-    >
-      <NavIcon id={item.id} />
-      <span className="sidebar-label">{item.label}</span>
-    </button>
+    <div className="sidebar-button">
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? "sidebar-link is-active" : "sidebar-link"
+        }
+        to={item.src || "#"}
+        end={item.src === "/"}
+        onClick={() => onSelect?.(item.id)}
+      >
+        <NavIcon id={item.id} />
+        <span className="sidebar-label">{item.label}</span>
+      </NavLink>
+    </div>
   );
 }
 
-export function Sidebar({ user = "student", active = "home", onSelect, isMobileOpen = false }) {
+export function Sidebar({ user = "student", active, onSelect, isMobileOpen = false }) {
+  const location = useLocation();
 
   let pages = [];
   if (user === "student") {
     pages = [
-      { id: "home", label: "DashBoard" },
-      { id: "lost-and-found", label: "Lost and Found" },
-      { id: "buy-and-sell", label: "Buy and Sell" },
-      { id: "registrations", label: "Registrations" },
-      { id: "skill-exchange", label: "Skill Exchange" },
-      { id: "notices", label: "Notices" },
+      { id: "home", label: "DashBoard", src: "/" },
+      { id: "lost-and-found", label: "Lost and Found", src: "/lost-and-found" },
+      { id: "buy-and-sell", label: "Buy and Sell", src: "/buy-and-sell" },
+      { id: "registrations", label: "Registrations", src: "/registrations" },
+      { id: "skill-exchange", label: "Skill Exchange", src: "/skill-exchange" },
+      { id: "notices", label: "Notices", src: "/notices" },
     ];
   } else if (user === "admin") {
     pages = [
-      { id: "home", label: "DashBoard" },
-      { id: "students", label: "Students" },
-      { id: "clubs", label: "Clubs" },
-      { id: "events", label: "Events" },
-      { id: "notices", label: "Notices" },
-      { id: "lost-and-found", label: "Lost and Found" }
+      { id: "home", label: "DashBoard", src: "/" },
+      { id: "students", label: "Students", src: "/students" },
+      { id: "clubs", label: "Clubs", src: "/clubs" },
+      { id: "events", label: "Events", src: "/events" },
+      { id: "notices", label: "Notices", src: "/notices" },
+      { id: "lost-and-found", label: "Lost and Found", src: "/lost-and-found" },
     ];
   } else if (user === "club") {
     pages = [
-      { id: "home", label: "DashBoard" },
-      { id: "events", label: "Events" },
-      { id: "members", label: "Members" },
-      { id: "announcements", label: "Announcements" }
+      { id: "home", label: "DashBoard", src: "/" },
+      { id: "events", label: "Events", src: "/events" },
+      { id: "members", label: "Members", src: "/members" },
+      { id: "announcements", label: "Announcements", src: "/announcements" },
     ];
   }
 
   const account = [
-    { id: "profile", label: "Profile" },
-    { id: "settings", label: "Settings" },
+    { id: "profile", label: "Profile", src: "/profile" },
+    { id: "settings", label: "Settings", src: "/settings" },
   ];
 
   const sidebarRef = useRef(null);
@@ -91,7 +98,10 @@ export function Sidebar({ user = "student", active = "home", onSelect, isMobileO
     const root = sidebarRef.current;
     if (!root) return;
     const activeBtn = root.querySelector(".sidebar-link.is-active");
-    if (!activeBtn) return;
+    if (!activeBtn) {
+      setIndicator(null);
+      return;
+    }
     const rootRect = root.getBoundingClientRect();
     const btnRect = activeBtn.getBoundingClientRect();
     setIndicator({
@@ -100,12 +110,10 @@ export function Sidebar({ user = "student", active = "home", onSelect, isMobileO
     });
   }
 
-  // Re-seat the bubble whenever the active link changes
   useEffect(() => {
     measureActive();
-  }, [active]);
+  }, [location.pathname, active]);
 
-  // Measure on mount + when the sidebar re-sizes / re-renders
   useEffect(() => {
     const id = window.setTimeout(measureActive, 60);
     window.addEventListener("resize", measureActive);
@@ -133,9 +141,9 @@ export function Sidebar({ user = "student", active = "home", onSelect, isMobileO
       )}
 
       <div className="sidebar-top">
-        <button type="button" className="sidebar-logo" onClick={() => onSelect?.("home")} aria-label="Go home">
+        <NavLink to="/" className="sidebar-logo" onClick={() => onSelect?.("home")} aria-label="Go home">
           <img src={logo} alt="MyApp" className="logo-image" />
-        </button>
+        </NavLink>
       </div>
 
       <nav className="sidebar-nav">
@@ -143,7 +151,6 @@ export function Sidebar({ user = "student", active = "home", onSelect, isMobileO
           <SidebarButton
             key={item.id}
             item={item}
-            active={active}
             onSelect={onSelect}
           />
         ))}
@@ -155,7 +162,6 @@ export function Sidebar({ user = "student", active = "home", onSelect, isMobileO
             <SidebarButton
               key={item.id}
               item={item}
-              active={active}
               onSelect={onSelect}
             />
           ))}
@@ -164,3 +170,4 @@ export function Sidebar({ user = "student", active = "home", onSelect, isMobileO
     </aside>
   );
 }
+
