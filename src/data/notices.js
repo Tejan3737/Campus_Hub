@@ -58,6 +58,30 @@ export const NOTICES = [
     priority: "Low",
     isImportant: false,
     targetAudience: "All Students"
+  },
+  {
+    id: 6,
+    title: "Library Timings Revised for Exam Period",
+    description:
+      "Central Library hours have been extended to 24/7 during the upcoming examination period starting next Monday.",
+    type: "Urgent",
+    date: "2026-08-28",
+    postedBy: "Central Library",
+    priority: "Low",
+    isImportant: false,
+    targetAudience: "All Students"
+  },
+  {
+    id: 7,
+    title: "Library Timings Revised for Exam Period",
+    description:
+      "Central Library hours have been extended to 24/7 during the upcoming examination period starting next Monday.",
+    type: "College Life",
+    date: "2026-08-28",
+    postedBy: "Central Library",
+    priority: "Low",
+    isImportant: false,
+    targetAudience: "All Students"
   }
 ];
 

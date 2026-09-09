@@ -11,7 +11,7 @@ import { useState , useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 export function App() {
-  const [userType, setUserType] = useState("student"); // 'student', 'admin', or 'club'
+  const [userType, setUserType] = useState("student");
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [theme, setTheme] = useState(
     () => localStorage.getItem("theme") || "light",

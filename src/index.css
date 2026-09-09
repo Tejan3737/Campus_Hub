@@ -301,6 +301,7 @@ body {
 .nav-icon-btn.notification {
   width: 42px;
   height: 42px;
+  border-radius: 50%;
   overflow: visible;
 }
 
@@ -1326,12 +1327,14 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .notice-card{
   border-bottom: 1px solid var(--sidebar-border);
   margin-bottom: 8px;
   padding-bottom: 8px;
+  width: 100%;
 }
 
 .notice-badge-announcement{
@@ -1350,15 +1353,16 @@ body {
   font-size: 1.2rem;
 }
 .notice-card-content{
+  width: 100%;
   margin: 0;
 }
 .notice-title{
   font-weight: 700;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   margin: 5px 0;
 }
 .notice-description{
-  font-size: 1rem;
+  font-size: 0.85rem;
   margin: 0;
   color: var(--muted-text);
 }
@@ -1368,9 +1372,47 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-top: 8px;
+  font-size: 0.75rem;
 }
 .notice-icon{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.view-all{
+  text-decoration: none;
+}
+.checkbox {
+  box-shadow: #000000 0px 2px 4px 0px;
+  position: absolute;
+}
+
+.checkbox-label {
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.moon {color: #0013bc;}
+
+.sun {color: #eec98e;}
+
+.checkbox-label .ball {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
 }

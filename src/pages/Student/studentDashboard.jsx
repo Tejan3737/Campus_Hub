@@ -29,7 +29,7 @@ export function Home() {
         <div className="Recent-Notices">
           <div className="Recent-Notices-head">
             <h2>Recent Notices</h2>
-            <NavLink to="/notices">View all</NavLink>
+            <NavLink to="/notices" className="view-all">View all</NavLink>
           </div>
           <div className="Recent-Notices-list">
             {NOTICES.slice(0, 3).map((notice) => (

@@ -86,3 +86,11 @@ export function RecentNoticesCard({ notice }) {
 }
 
 export default RecentEventCard;
+
+export function  BuySellCard(){
+  return(
+    <>
+    <div>this is a card</div>
+    </>
+  )
+}
