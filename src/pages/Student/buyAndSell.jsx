@@ -1,4 +1,4 @@
-import {BuySellCard} from "../../components/Card";
+import { BuySellCard } from "../../components/Card";
 export function BuyAndSell() {
   return (
     <>

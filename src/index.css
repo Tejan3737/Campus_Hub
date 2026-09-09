@@ -1416,3 +1416,38 @@ body {
 .checkbox:checked + .checkbox-label .ball {
   transform: translateX(24px);
 }
+
+.lost-and-found-page {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  width: 12rem;
+  overflow-wrap: wrap;
+}
+.lost-and-found-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--search-bg);
+  border: 1px solid var(--sidebar-border);
+  box-shadow: var(--elev-1);
+}
+.lost-and-found-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.lost-item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.lost-item-image img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 12px;
+}

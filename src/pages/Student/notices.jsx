@@ -17,4 +17,4 @@ export function Notices() {
   );
 }
 
-export default Notices; a
+export default Notices; 

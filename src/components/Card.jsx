@@ -1,4 +1,4 @@
-import { MapPin, ShieldCheck, CircleAlert, BellRing } from "lucide-react";
+import { MapPin, ShieldCheck, CircleAlert, BellRing, CalendarDays } from "lucide-react";
 
 export function RecentEventCard({ title, location, imageUrl }) {
   return (
@@ -93,4 +93,29 @@ export function  BuySellCard(){
     <div>this is a card</div>
     </>
   )
+}
+
+export function LostAndFoundCard({ item, category, location, date, status, imageUrl, description }) {
+  return (
+    <div className="lost-and-found-card">
+      <div className="lost-item-image">
+        <p className="lost-and-found-status"><strong>Status:</strong> {status}</p>
+        <img src={imageUrl} alt={item} />
+      </div>
+      <div className="lost-and-found-card-header">
+        <h3 className="lost-and-found-item">{item}</h3>
+        <p className="lost-and-found-category"><strong>Category:</strong> {category}</p>
+      </div>
+      <div className="lost-and-found-card-body">
+        <div className="lost-and-found-locate">
+          <MapPin />
+          <p className="lost-and-found-location"><strong>Location:</strong> {location}</p>
+        </div>
+        <div className="lost-and-found-date-time">
+          <CalendarDays />
+          <p className="lost-and-found-date"><strong>Date:</strong> {date}</p>
+        </div>
+      </div>
+    </div>
+  );
 }
