@@ -68,5 +68,15 @@ export const LostandFound = [
     status: "Lost",
     image: "https://images.unsplash.com/photo-1531346878377-a5be20888e57",
     description: "Blue notebook containing handwritten DBMS notes."
+  },
+  {
+    id: 8,
+    item: "Smart Watch",
+    category: "Electronics",
+    location: "Alpha Zone - Playground",
+    date: "2026-09-019",
+    status: "Lost",
+    image: "https://cdn.mos.cms.futurecdn.net/RX3ry3DhH76zaHmg2GGGR9.jpg",
+    description: "A green strapped Samsung smart watch."
   }
 ];

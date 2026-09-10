@@ -1418,38 +1418,45 @@ body {
 }
 
 .lost-and-found-page {
-  display: flex;
-  flex-direction: row;
-  gap: 12px;
-  width: 12rem;
-  overflow-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  width: 100%;
+  padding: 16px;
 }
 .lost-and-found-card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 12px;
-  border-radius: 12px;
-  background: var(--search-bg);
-  border: 1px solid var(--sidebar-border);
-  box-shadow: var(--elev-1);
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.lost-and-found-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 .lost-and-found-card-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 8px;
 }
 .lost-item-image {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 12px;
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background-color: #f3f4f6;
 }
 .lost-item-image img {
-  width: 80px;
-  height: 80px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 0;
 }
 
 .buy-and-sell-page{
