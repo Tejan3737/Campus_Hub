@@ -25,7 +25,7 @@ export const EVENTS = [
     time: "08:00 AM",
     location: "College Sports Ground",
     organizer: "Sports Club",
-    image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55",
+    image: "https://imgs.search.brave.com/wsM9pmF2PI8D5Osa7Ff9fLxISoVD96i2c-HTtja0Wa4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQ3/MjMxOTA2Ny9waG90/by9iYWRtaW50b24t/YmFsbC1vbi0zZC1p/bGx1c3RyYXRpb24u/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PV9HakRPOXNUTWVO/bUZiczA2YUNMckRB/R3VBakR2VVFiMzNu/THU1NnF4ekk9",
     maxParticipants: 80,
     registeredParticipants: 54,
     status: "Upcoming"

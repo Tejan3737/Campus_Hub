@@ -87,10 +87,25 @@ export function RecentNoticesCard({ notice }) {
 
 export default RecentEventCard;
 
-export function  BuySellCard(){
+export function  BuySellCard({title, category, price, condition, seller, image}){
   return(
     <>
-    <div>this is a card</div>
+    <div className="buy-and-sell-card">
+      <div className="buy-item-image">
+        {/* <p className="item-condition">Condition: {condition}</p> */}
+        <img src={image} />
+      </div>
+      <div className="buy-item-header">
+        <h4><strong>{title}</strong></h4>
+        <p><strong>₹{price}</strong></p>
+      </div>
+      <div className="buy-item-body">
+        <p>Seller: {seller}</p>
+      </div>    
+      <div className="buy-item-footer">
+        <button>Buy Now →</button>
+      </div>
+    </div>
     </>
   )
 }
