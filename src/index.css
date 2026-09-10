@@ -1338,17 +1338,17 @@ body {
 }
 
 .notice-badge-announcement{
-  color: #0f3c8f;
+  color: #032461;
   font-weight: 700;
   font-size: 1.2rem;
 }
 .notice-badge-college-life{
-  color: #027e08;
+  color: #004d05;
   font-weight: 700;
   font-size: 1.2rem;
 }
 .notice-badge-urgent{
-  color: #f11717;
+  color: #710909;
   font-weight: 700;
   font-size: 1.2rem;
 }
