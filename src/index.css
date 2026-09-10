@@ -506,7 +506,7 @@ body {
   left: 10px;
   right: 10px;
   border-radius: 0px 10px 10px 0px;
-  background: linear-gradient(to right, #6c5ce7 4px, #c7d6fe 4px , #c7d6fe 100% );
+  background: linear-gradient(to right, #6c5ce7 4px, #c7d6fe 4px, #c7d6fe 100%);
   box-shadow: var(--elev-1);
   pointer-events: none;
   z-index: 0;
@@ -649,7 +649,7 @@ body {
   pointer-events: none;
 }
 
-.signup > * {
+.signup>* {
   position: relative;
   z-index: 1;
 }
@@ -845,12 +845,14 @@ body {
   padding: 0px 16px;
   background: rgba(255, 255, 255, 0.32);
 }
+
 .Recent-Notices-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--sidebar-border);
 }
+
 .Recent-Notices-head p {
   color: blue;
 }
@@ -882,7 +884,7 @@ body {
 }
 
 .featured-header p,
-.featured.events > p {
+.featured.events>p {
   margin: 0;
   font-size: 1.1rem;
   font-weight: 700;
@@ -994,26 +996,59 @@ body {
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes wiggle {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(2deg); }
-  75% { transform: rotate(-2deg); }
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(2deg);
+  }
+
+  75% {
+    transform: rotate(-2deg);
+  }
 }
 
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
 }
 
 @media (max-width: 980px) {
@@ -1037,7 +1072,7 @@ body {
   }
 
   .lost-and-found-card {
-    width:50%;
+    width: 50%;
   }
 
   .nav-search {
@@ -1145,10 +1180,7 @@ body {
   .navbar {
     min-height: calc(60px + env(safe-area-inset-top));
     padding:
-      calc(8px + env(safe-area-inset-top))
-      max(10px, env(safe-area-inset-right))
-      calc(8px + env(safe-area-inset-bottom))
-      max(10px, env(safe-area-inset-left));
+      calc(8px + env(safe-area-inset-top)) max(10px, env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left));
     border-radius: 0;
   }
 
@@ -1158,19 +1190,23 @@ body {
     width: 44px;
     height: 44px;
   }
+
   .nav-icon-btn svg {
     width: 22px;
     height: 22px;
   }
+
   .nav-icon-btn.notification img {
     width: 24px;
     height: 24px;
   }
+
   .nav-link {
     display: inline-flex;
     align-items: center;
     min-height: 40px;
   }
+
   .nav-search {
     min-height: 44px;
   }
@@ -1270,6 +1306,7 @@ body {
 }
 
 @media (max-width: 480px) {
+
   .Recent-Notices,
   .featured.events {
     border-radius: 14px;
@@ -1280,8 +1317,9 @@ body {
   }
 
   .lost-and-found-card {
-    width:50%;
+    width: 50%;
   }
+
   .card-image {
     height: 110px;
   }
@@ -1295,10 +1333,12 @@ body {
   .nav-actions {
     gap: 3px;
   }
+
   .buy-and-sell-card {
-    width:50%;
+    width: 50%;
     padding: 0px, 0px, 0px, 0px;
   }
+
   .nav-link {
     padding: 6px;
     font-size: 0.75rem;
@@ -1318,21 +1358,22 @@ body {
   }
 }
 
-.notice-card{
+.notice-card {
   display: flex;
   flex-direction: row;
   gap: 24px;
   padding: 12px 0;
 }
 
-.icon-container-notice{
+.icon-container-notice {
   display: grid;
   place-items: center;
   width: 80px;
   height: 80px;
   border-radius: 20%;
 }
-.notice-card-header{
+
+.notice-card-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -1340,43 +1381,49 @@ body {
   width: 100%;
 }
 
-.notice-card{
+.notice-card {
   border-bottom: 1px solid var(--sidebar-border);
   margin-bottom: 8px;
   padding-bottom: 8px;
   width: 100%;
 }
 
-.notice-badge-announcement{
+.notice-badge-announcement {
   color: #032461;
   font-weight: 700;
   font-size: 1.2rem;
 }
-.notice-badge-college-life{
+
+.notice-badge-college-life {
   color: #004d05;
   font-weight: 700;
   font-size: 1.2rem;
 }
-.notice-badge-urgent{
+
+.notice-badge-urgent {
   color: #710909;
   font-weight: 700;
   font-size: 1.2rem;
 }
-.notice-card-content{
+
+.notice-card-content {
   width: 100%;
   margin: 0;
 }
-.notice-title{
+
+.notice-title {
   font-weight: 700;
   font-size: 1.25rem;
   margin: 5px 0;
 }
-.notice-description{
+
+.notice-description {
   font-size: 0.85rem;
   margin: 0;
   color: var(--muted-text);
 }
-.notice-footer{
+
+.notice-footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -1384,14 +1431,17 @@ body {
   margin-top: 8px;
   font-size: 0.75rem;
 }
-.notice-icon{
+
+.notice-icon {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.view-all{
+
+.view-all {
   text-decoration: none;
 }
+
 .checkbox {
   box-shadow: #000000 0px 2px 4px 0px;
   position: absolute;
@@ -1409,9 +1459,13 @@ body {
   align-items: center;
 }
 
-.moon {color: #0013bc;}
+.moon {
+  color: #0013bc;
+}
 
-.sun {color: #eec98e;}
+.sun {
+  color: #eec98e;
+}
 
 .checkbox-label .ball {
   width: 22px;
@@ -1423,7 +1477,7 @@ body {
   transition: transform 0.2s linear;
 }
 
-.checkbox:checked + .checkbox-label .ball {
+.checkbox:checked+.checkbox-label .ball {
   transform: translateX(24px);
 }
 
@@ -1431,46 +1485,52 @@ body {
   display: flex;
   flex-direction: row;
   gap: 12px;
-  flex-wrap: wrap;
+  width: 12rem;
+  overflow-wrap: wrap;
 }
+
 .lost-and-found-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 8px;
   padding: 12px;
-  width: 20rem;
-  height: 30%;
   border-radius: 12px;
   background: var(--search-bg);
   border: 1px solid var(--sidebar-border);
   box-shadow: var(--elev-1);
 }
+
 .lost-and-found-card-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 8px;
 }
+
 .lost-item-image {
-  width: 12rem;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-.lost-item-image img {
   width: 80px;
   height: 80px;
   object-fit: cover;
   border-radius: 12px;
 }
 
-.buy-and-sell-page{
+.lost-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.buy-and-sell-page {
   display: flex;
   flex-direction: row;
   gap: 12px;
   flex-wrap: wrap;
-  padding: 0px 0px 0px 109px ;
+  padding: 0px 0px 0px 109px;
 }
-.buy-and-sell-card{
+
+.buy-and-sell-card {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -1481,44 +1541,51 @@ body {
   border: 1px solid var(--sidebar-border);
   box-shadow: var(--elev-1);
 }
-.buy-item-image{
+
+.buy-item-image {
   width: 100%;
   height: 12rem;
   object-fit: cover;
   border-radius: 12px;
 }
-.buy-item-header{
+
+.buy-item-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 8px;
 }
-.buy-item-body{
+
+.buy-item-body {
   display: flex;
   flex-direction: column;
   gap: 8px;
   padding: 8px;
 }
-.buy-item-image img{
+
+.buy-item-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 12px 12px 0 0;
 }
-.buy-item-footer{
+
+.buy-item-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px ;
+  padding: 8px;
 }
-.buy-item-footer button{
+
+.buy-item-footer button {
   width: 100%;
   border-radius: 8px;
   height: 2.2rem;
   background-color: #4254fbcd;
   border: none;
 }
-.buy-item-footer button :hover{
+
+.buy-item-footer button :hover {
   width: 100%;
   border-radius: 8px;
   height: 2.2rem;
