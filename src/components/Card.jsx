@@ -134,3 +134,33 @@ export function LostAndFoundCard({ item, category, location, date, status, image
     </div>
   );
 }
+
+export function SkillExchangeCard({ imageUrl, person_name, level_rating, level, skills, description }) {
+  return(
+    <div className="skill-exchange-card">
+      <div className="Skiller_name">
+        <img src={imageUrl} alt={person_name} />
+      </div>
+      <div className="Skillexchange_body">
+        <div className="NameOfPerson"><h3>{person_name}</h3></div>
+        <div className="description"><p>{description}</p></div>
+      </div>
+      <div className="skils">
+        {
+          skills.map((skill, index) => (
+            <span key={index} className="skill-tag">
+              {skill}
+            </span>
+          ))
+        }
+      </div>
+      <div>
+        <p><strong>Rating:</strong> {level_rating}</p>
+        <p><strong>Level:</strong> {level}</p>
+      </div>
+      <div className="connect_button">
+        <button>Connect Now</button>
+      </div>
+    </div>
+  );
+}
