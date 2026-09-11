@@ -1449,3 +1449,59 @@ body {
   height: 2.2rem;
   background-color: #b3541e;
 }
+.skill_exchange_page {
+    min-height: 100vh;
+    padding: 35px;
+    background: #eef6ff;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    box-sizing: border-box;
+}
+.skill-exchange-card {
+    background: white;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: 0.25s ease;
+}
+.skill-exchange-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+.Skiller_name img {
+    width: 85px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #e7f0ff;
+}
+.NameOfPerson h3 {
+    margin: 0;
+    font-size: 21px;
+    color: #263b53;
+    font-weight: 700;
+}
+.description p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #718096;
+}
+.skils {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 5px;
+}
+.skill-tag {
+    display: inline-block;
+    padding: 7px 13px;
+    background: #e8f0ff;
+    color: #3974d9;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
