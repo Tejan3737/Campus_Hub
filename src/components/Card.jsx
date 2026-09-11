@@ -103,7 +103,7 @@ export function  BuySellCard({title, category, price, condition, seller, image})
         <p>Seller: {seller}</p>
       </div>    
       <div className="buy-item-footer">
-        <button>Buy Now →</button>
+        <button>Buy Now</button>
       </div>
     </div>
     </>

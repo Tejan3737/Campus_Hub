@@ -8,7 +8,7 @@ export const USERS = [
     roleBadgeClass: "badge-student",
     subtitle: "B.Tech CSE • Year 2",
     avatar: "TS",
-    avatarBg: "linear-gradient(135deg, #6c5ce7, #a29bfe)",
+    avatarBg: "#2f4f73",
     notificationsCount: 3,
     pages: [
       { id: "home", label: "Dashboard", badge: null },
@@ -32,7 +32,7 @@ export const USERS = [
     roleBadgeClass: "badge-admin",
     subtitle: "Campus Operations & IT",
     avatar: "AC",
-    avatarBg: "linear-gradient(135deg, #d63031, #ff7675)",
+    avatarBg: "#8a3b2f",
     notificationsCount: 8,
     pages: [
       { id: "home", label: "Admin Center", badge: null },
@@ -56,7 +56,7 @@ export const USERS = [
     roleBadgeClass: "badge-club",
     subtitle: "Tech & Coding Club Lead",
     avatar: "RG",
-    avatarBg: "linear-gradient(135deg, #e17055, #fab1a0)",
+    avatarBg: "#b3541e",
     notificationsCount: 4,
     pages: [
       { id: "home", label: "Club Dashboard", badge: null },
@@ -79,7 +79,7 @@ export const USERS = [
     roleBadgeClass: "badge-guest",
     subtitle: "Public / Prospective Visitor",
     avatar: "GV",
-    avatarBg: "linear-gradient(135deg, #0984e3, #74b9ff)",
+    avatarBg: "#3f5f80",
     notificationsCount: 1,
     pages: [
       { id: "home", label: "Campus Overview", badge: null },

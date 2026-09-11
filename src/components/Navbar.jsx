@@ -1,13 +1,11 @@
 import { useState } from "react";
-import bell from "../assets/bell.png";
-import {Moon, User, Sun} from "lucide-react"
+import { Moon, BellRing, Sun } from "lucide-react";
 
 export function Navbar({
   mode,
   onNavigate,
   theme = "light",
   onToggleTheme,
-  notificationCount = 0,
   mobileMenuOpen = false,
   onToggleMobileMenu,
 }) {
@@ -57,7 +55,7 @@ export function Navbar({
           </div>
 
           <button type="button" className="nav-icon-btn notification" aria-label="Notifications">
-            <User size={20} />
+            <BellRing size={20} />
           </button>
 
           {onNavigate && (

@@ -31,7 +31,6 @@ export function App() {
           onToggleTheme={() =>
             setTheme((value) => (value === "dark" ? "light" : "dark"))
           }
-          notificationCount={3}
           mobileMenuOpen={mobileSidebarOpen}
           onToggleMobileMenu={() => setMobileSidebarOpen((value) => !value)}
         />
