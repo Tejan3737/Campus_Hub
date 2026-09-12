@@ -39,4 +39,34 @@ export const SkillExchangeData = [
       "https://static.vecteezy.com/system/resources/thumbnails/036/092/706/small_2x/ai-generated-portrait-of-successful-and-happy-businesswoman-in-office-smiling-and-looking-at-camera-with-crossed-arms-photo.jpg",
     description: "Computer Science, 1st year"
   },
+  {
+    id: 5,
+    person_name: "Aarna",
+    level_rating: "3.5",
+    level: "Easy",
+    skills: ["react", "Java", "Python"],
+    imageUrl:
+      "https://tse2.mm.bing.net/th/id/OIP.C1QxfhxKco2RW2SGPdcFGQHaLH?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+    description: "Computer Science, 1st year"
+  },
+  {
+    id: 6,
+    person_name: "Rahul",
+    level_rating: "4.8",
+    level: "Easy",
+    skills: ["Full Stack Development", "React", "Node.js"],
+    imageUrl:
+      "https://img.freepik.com/premium-photo/young-professional-corporate-person_1146775-803.jpg",
+    description: "Computer Science, 4th year"
+  },
+  {
+    id: 7,
+    person_name: "Gian",
+    level_rating: "3.6",
+    level: "Easy",
+    skills: ["React", "Java"],
+    imageUrl:
+      "https://cdn.pixabay.com/photo/2015/08/05/10/42/andrew-ronalds-876138_1280.jpg",
+    description: "Computer Science, 1st year"
+  }
 ];

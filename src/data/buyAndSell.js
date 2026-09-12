@@ -36,7 +36,7 @@ export const BuyandSell = [
     price: 250,
     condition: "Good",
     seller: "Simran Kaur",
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae",
+    image: "https://tse2.mm.bing.net/th/id/OIP.0thw1s2Dz9qMXI_FrirMXQHaEp?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
     description: "White lab coat suitable for college practicals."
   },
   {
