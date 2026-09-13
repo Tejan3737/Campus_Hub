@@ -1,4 +1,10 @@
-import { MapPin, ShieldCheck, CircleAlert, BellRing, CalendarDays } from "lucide-react";
+import {
+  MapPin,
+  ShieldCheck,
+  CircleAlert,
+  BellRing,
+  CalendarDays,
+} from "lucide-react";
 
 export function RecentEventCard({ title, location, imageUrl }) {
   return (
@@ -87,79 +93,124 @@ export function RecentNoticesCard({ notice }) {
 
 export default RecentEventCard;
 
-export function BuySellCard({ title, category, price, condition, seller, image }) {
+export function BuySellCard({
+  title,
+  category,
+  price,
+  condition,
+  seller,
+  image,
+}) {
   return (
     <div className="buy-and-sell-card">
       <div className="buy-item-image">
         <p className="buy-item-category">{category}</p>
         <img src={image} alt={title} />
       </div>
-      <div className="buy-item-header">
-        <h4><strong>{title}</strong></h4>
-        <p><strong>₹{price}</strong></p>
-      </div>
-      <div className="buy-item-body">
-        <p>
-          Seller: {seller}
-          {condition ? (
-            <span className="buy-item-condition"> • Condition: {condition}</span>
-          ) : null}
-        </p>
-      </div>
-      <div className="buy-item-footer">
-        <button>Buy Now</button>
+      <div className="buy-item-content">
+        <div className="buy-item-header">
+          <h4>
+            <strong>{title}</strong>
+          </h4>
+          <p>
+            <strong>₹{price}</strong>
+          </p>
+        </div>
+        <div className="buy-item-body">
+          <p>
+            Seller: {seller}
+            {condition ? (
+              <span className="buy-item-condition">
+                {" "}
+                • Condition: {condition}
+              </span>
+            ) : null}
+          </p>
+        </div>
+        <div className="buy-item-footer">
+          <button>Buy Now</button>
+        </div>
       </div>
     </div>
   );
 }
 
-export function LostAndFoundCard({ item, category, location, date, status, imageUrl, description }) {
+export function LostAndFoundCard({
+  item,
+  category,
+  location,
+  date,
+  status,
+  imageUrl,
+  description,
+}) {
   return (
     <div className="lost-and-found-card">
       <div className="lost-item-image">
-        <p className="lost-and-found-status"><strong>Status:</strong> {status}</p>
+        <p className="lost-and-found-status">
+          <strong>Status:</strong> {status}
+        </p>
         <img src={imageUrl} alt={item} />
       </div>
       <div className="lost-and-found-card-header">
         <h3 className="lost-and-found-item">{item}</h3>
-        <p className="lost-and-found-category"><strong>Category:</strong> {category}</p>
+        <p className="lost-and-found-category">
+          <strong>Category:</strong> {category}
+        </p>
       </div>
       <div className="lost-and-found-card-body">
         <div className="lost-and-found-locate">
           <MapPin />
-          <p className="lost-and-found-location"><strong>Location:</strong> {location}</p>
+          <p className="lost-and-found-location">
+            <strong>Location:</strong> {location}
+          </p>
         </div>
         <div className="lost-and-found-date-time">
           <CalendarDays />
-          <p className="lost-and-found-date"><strong>Date:</strong> {date}</p>
+          <p className="lost-and-found-date">
+            <strong>Date:</strong> {date}
+          </p>
         </div>
       </div>
     </div>
   );
 }
 
-export function SkillExchangeCard({ imageUrl, person_name, level_rating, level, skills, description }) {
-  return(
+export function SkillExchangeCard({
+  imageUrl,
+  person_name,
+  level_rating,
+  level,
+  skills,
+  description,
+}) {
+  return (
     <div className="skill-exchange-card">
       <div className="Skiller_name">
         <img src={imageUrl} alt={person_name} />
       </div>
       <div className="Skillexchange_body">
-        <div className="NameOfPerson"><h3>{person_name}</h3></div>
-        <div className="description"><p>{description}</p></div>
+        <div className="NameOfPerson">
+          <h3>{person_name}</h3>
+        </div>
+        <div className="description">
+          <p>{description}</p>
+        </div>
       </div>
       <div className="skils">
-        {
-          skills.map((skill, index) => (
-            <span key={index} className="skill-tag">
-              {skill}
-            </span>
-          ))
-        }
+        {skills.map((skill, index) => (
+          <span key={index} className="skill-tag">
+            {skill}
+          </span>
+        ))}
       </div>
       <div>
-        <p><strong>Rating:</strong> {level_rating}</p>
-        <p><strong>Level:</strong> {level}</p>
+        <p>
+          <strong>Rating:</strong> {level_rating}
+        </p>
+        <p>
+          <strong>Level:</strong> {level}
+        </p>
       </div>
       <div className="connect_button">
         <button>Connect Now</button>
