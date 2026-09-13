@@ -1203,6 +1203,14 @@ body {
     font-size: 0.95rem;
     max-width: 100%;
   }
+
+  .buy-item-image {
+    height: 10rem;
+  }
+
+  .buy-filter-bar {
+    margin-bottom: 16px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1217,6 +1225,11 @@ body {
 
   .card-image {
     height: 110px;
+  }
+
+  .buy-and-sell-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
   }
 }
 
@@ -1406,24 +1419,60 @@ body {
   transform: scale(1.04);
 }
 
-.buy-and-sell-page{
-  display: flex;
-  flex-direction: row;
-  gap: 12px;
-  flex-wrap: wrap;
-  padding: 0px 0px 0px 109px ;
+.buy-and-sell-page {
+  width: 100%;
 }
-.buy-and-sell-card{
+.buy-and-sell-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+.buy-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 4px 0 20px;
+}
+.buy-filter-tag {
+  padding: 7px 14px;
+  border: 1px solid var(--sidebar-border);
+  border-radius: 4px;
+  background: var(--search-bg);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.buy-filter-tag:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.buy-filter-tag.is-active {
+  background: #2f4f73;
+  border-color: #2f4f73;
+  color: #ffffff;
+}
+[data-theme="dark"] .buy-filter-tag.is-active {
+  background: #6f93b8;
+  border-color: #6f93b8;
+}
+.buy-filter-tag:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.buy-and-sell-card {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 12px;
-  width: 20rem;
-  height: 30%;
-  border-radius: 8px;
+  min-width: 0;
+  border-radius: 8px 8px 0 0;
   background: var(--search-bg);
   border: 1px solid var(--sidebar-border);
   box-shadow: var(--elev-1);
+}
+.buy-item-footer {
+  margin-top: auto;
 }
 .lost-and-found-category {
   flex-shrink: 0;
@@ -1500,24 +1549,49 @@ body {
   gap: 8px;
   padding: 4px 16px 16px;
 }
-.buy-item-image{
+.buy-item-image {
+  position: relative;
   width: 100%;
   height: 12rem;
   object-fit: cover;
   border-radius: 6px;
 }
-.buy-item-header{
+.buy-item-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  margin: 0;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(47, 79, 115, 0.92);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+}
+[data-theme="dark"] .buy-item-category {
+  background: rgba(111, 147, 184, 0.92);
+}
+.buy-item-condition {
+  color: var(--muted-text);
+}
+.buy-item-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 8px;
 }
-.buy-item-image img{
+.buy-item-header h4 {
+  margin: 0;
+  min-width: 0;
+}
+.buy-item-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 6px;
 }
-.buy-item-footer button{
+.buy-item-footer button {
   width: 100%;
   border-radius: 4px;
   height: 2.2rem;
@@ -1526,7 +1600,7 @@ body {
   color: #ffffff;
   cursor: pointer;
 }
-.buy-item-footer button:hover{
+.buy-item-footer button:hover {
   width: 100%;
   border-radius: 4px;
   height: 2.2rem;

@@ -87,27 +87,30 @@ export function RecentNoticesCard({ notice }) {
 
 export default RecentEventCard;
 
-export function  BuySellCard({title, category, price, condition, seller, image}){
-  return(
-    <>
+export function BuySellCard({ title, category, price, condition, seller, image }) {
+  return (
     <div className="buy-and-sell-card">
       <div className="buy-item-image">
-        {/* <p className="item-condition">Condition: {condition}</p> */}
-        <img src={image} />
+        <p className="buy-item-category">{category}</p>
+        <img src={image} alt={title} />
       </div>
       <div className="buy-item-header">
         <h4><strong>{title}</strong></h4>
         <p><strong>₹{price}</strong></p>
       </div>
       <div className="buy-item-body">
-        <p>Seller: {seller}</p>
-      </div>    
+        <p>
+          Seller: {seller}
+          {condition ? (
+            <span className="buy-item-condition"> • Condition: {condition}</span>
+          ) : null}
+        </p>
+      </div>
       <div className="buy-item-footer">
         <button>Buy Now</button>
       </div>
     </div>
-    </>
-  )
+  );
 }
 
 export function LostAndFoundCard({ item, category, location, date, status, imageUrl, description }) {
