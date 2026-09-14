@@ -524,18 +524,6 @@ body {
   text-overflow: ellipsis;
 }
 
-.sidebar.is-collapsed .sidebar-icon {
-}
-
-.sidebar-link:hover .sidebar-icon {
-}
-
-.sidebar-link:hover .sidebar-label {
-}
-
-.sidebar.is-collapsed .sidebar-link:hover .sidebar-icon {
-}
-
 .page-main {
   flex: 1;
   min-width: 0;
