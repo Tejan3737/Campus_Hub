@@ -63,9 +63,6 @@ body,
   --press-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* =========================================================
-   BODY
-   ========================================================= */
 body {
   margin: 0;
   display: flex;
@@ -209,7 +206,6 @@ body {
   transform: translateY(-6px) rotate(-45deg);
 }
 
-/* Search */
 .nav-search {
   display: flex;
   align-items: center;
@@ -303,7 +299,6 @@ body {
   position: static;
 }
 
-/* Nav links & signup */
 .nav-link {
   border: 1px solid transparent;
   border-radius: 4px;
@@ -484,7 +479,6 @@ body {
   outline: none;
 }
 
-/* Active item marker */
 .sidebar-indicator {
   position: absolute;
   left: 10px;
@@ -689,7 +683,6 @@ body {
   box-shadow: 0 0 0 2px rgba(15, 60, 143, 0.15);
 }
 
-/* Password field wrapper + toggle */
 .Pass {
   position: relative;
   width: 100%;
@@ -736,7 +729,6 @@ body {
   filter: brightness(0) invert(1);
 }
 
-/* Password parameters */
 .parameters.is-hidden {
   display: none;
 }
@@ -1371,13 +1363,18 @@ body {
 }
 
 .lost-and-found-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.laf-page-head h1 {
+  margin: 0 0 4px;
+}
+.laf-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
-  width: 100%;
-  padding: 24px;
-  box-sizing: border-box;
-  background: #f7f9fc;
 }
 .lost-and-found-card {
   position: relative;
@@ -1514,18 +1511,52 @@ body {
   margin: 0;
   padding: 6px 10px;
   border-radius: 6px;
-  background: #1267d6;
+  background: rgba(47, 79, 115, 0.15);
+  color: #2f4f73;
+  font-size: 11px;
+  font-weight: 700;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+.lost-and-found-status.found {
+  background: rgba(21, 185, 24, 0.15);
+  color: #16a34a;
+}
+.lost-and-found-status.lost {
+  background: rgba(220, 38, 38, 0.14);
+  color: #dc2626;
+}
+.lost-and-found-category-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  z-index: 2;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(2, 6, 23, 0.65);
   color: #ffffff;
   font-size: 11px;
   font-weight: 600;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
-.lost-and-found-status strong {
-  display: none;
+.lost-and-found-locate,
+.lost-and-found-date-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted-text);
 }
-.lost-and-found-status.lost {
-  background: #fff4e5;
-  color: #b45309;
+[data-theme="dark"] .lost-and-found-card {
+  background: #0f172a;
+  border-color: #1e293b;
+}
+[data-theme="dark"] .lost-and-found-card-title {
+  color: #e7edf4;
+}
+[data-theme="dark"] .lost-and-found-card-description {
+  color: #9aa4b0;
+}
+[data-theme="dark"] .lost-and-found-card-footer {
+  border-top-color: #1e293b;
 }
 .lost-and-found-card-footer {
   display: flex;
@@ -1800,4 +1831,357 @@ body {
     border-radius: 20px;
     font-size: 13px;
     font-weight: 600;
+}
+.connect_button {
+    margin-top: auto;
+}
+.connect_button button {
+    width: 100%;
+    padding: 11px;
+    border: none;
+    border-radius: 10px;
+    background: #2f4f73;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.connect_button button:hover {
+    background: #b3541e;
+}
+.connect-modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    color: var(--text);
+}
+.connect-modal-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: rgba(21, 185, 24, 0.12);
+    color: #16a34a;
+}
+.connect-modal-body p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.connect-modal-linkedin {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 14px;
+    background: #eef3fb;
+    border-radius: 9px;
+    color: var(--text);
+}
+[data-theme="dark"] .connect-modal-linkedin {
+    background: #1e293b;
+}
+.connect-modal-linkedin a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+.connect-modal-linkedin a:hover {
+    text-decoration: underline;
+}
+
+.registrations-page {
+    width: 100%;
+}
+.reg-subtitle {
+    margin: 0 0 18px;
+    color: var(--muted-text);
+    font-size: 14px;
+}
+.reg-badge {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(47, 79, 115, 0.12);
+    color: #2f4f73;
+    font-size: 12px;
+    font-weight: 600;
+}
+[data-theme="dark"] .reg-badge {
+    color: #8fb4d8;
+}
+.reg-toolbar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+.reg-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 360px;
+    padding: 9px 12px;
+    border: 1px solid var(--sidebar-border);
+    border-radius: 8px;
+    background: var(--search-bg);
+    color: var(--muted-text);
+}
+.reg-search input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text);
+    font-size: 14px;
+}
+.reg-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.reg-filter {
+    padding: 7px 14px;
+    border: 1px solid var(--sidebar-border);
+    border-radius: 999px;
+    background: var(--search-bg);
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.reg-filter:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+.reg-filter.is-active {
+    background: #2f4f73;
+    border-color: #2f4f73;
+    color: #ffffff;
+}
+[data-theme="dark"] .reg-filter.is-active {
+    background: #6f93b8;
+    border-color: #6f93b8;
+}
+.reg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+.reg-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 14px;
+    background: var(--search-bg);
+    border: 1px solid var(--sidebar-border);
+    box-shadow: var(--elev-1);
+}
+.reg-card-image {
+    position: relative;
+    height: 160px;
+    overflow: hidden;
+}
+.reg-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.reg-card-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(2, 6, 23, 0.65);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+}
+.reg-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+}
+.reg-card-title {
+    margin: 0;
+    font-size: 17px;
+    color: var(--text);
+}
+.reg-organizer {
+    margin: 2px 0 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary);
+}
+.reg-desc {
+    margin: 0;
+    font-size: 13px;
+    color: var(--muted-text);
+    line-height: 1.5;
+}
+.reg-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--text);
+}
+.reg-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.reg-seats-bar {
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(148, 163, 184, 0.25);
+    overflow: hidden;
+}
+.reg-seats-bar span {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+    background: var(--primary);
+}
+.reg-seats-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: var(--muted-text);
+}
+.reg-register,
+.reg-registered {
+    margin-top: auto;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 11px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+.reg-register {
+    background: #2f4f73;
+    color: #ffffff;
+}
+.reg-register:hover {
+    background: var(--primary);
+}
+.reg-registered {
+    background: rgba(21, 185, 24, 0.15);
+    color: #16a34a;
+    cursor: default;
+}
+.reg-empty {
+    padding: 40px;
+    text-align: center;
+    color: var(--muted-text);
+    border: 1px dashed var(--sidebar-border);
+    border-radius: 12px;
+}
+.reg-modal {
+    width: min(480px, 100%);
+}
+.reg-event-summary {
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid var(--sidebar-border);
+    border-radius: 10px;
+    background: var(--search-bg);
+}
+.reg-event-summary img {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+.reg-event-summary h3 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    color: var(--text);
+}
+.reg-event-summary p {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 2px 0;
+    font-size: 12px;
+    color: var(--muted-text);
+}
+.reg-textarea {
+    resize: vertical;
+    min-height: 70px;
+    font-family: inherit;
+}
+.reg-optional {
+    color: var(--muted-text);
+    font-weight: 400;
+    font-size: 12px;
+}
+.reg-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 8px 4px;
+}
+.reg-success-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(21, 185, 24, 0.12);
+    color: #16a34a;
+}
+.reg-success h3 {
+    margin: 0;
+    color: var(--text);
+}
+.reg-success p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text);
+}
+.reg-success-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 6px;
+}
+.reg-success-details span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #eef3fb;
+    font-size: 12px;
+    color: var(--text);
+}
+[data-theme="dark"] .reg-success-details span {
+    background: #1e293b;
 }

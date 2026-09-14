@@ -135,6 +135,16 @@ export function BuySellCard({
   );
 }
 
+function formatCardDate(value) {
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) return value;
+  return parsed.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+}
+
 export function LostAndFoundCard({
   item,
   category,
@@ -147,30 +157,29 @@ export function LostAndFoundCard({
   return (
     <div className="lost-and-found-card">
       <div className="lost-item-image">
-        <p className="lost-and-found-status">
-          <strong>Status:</strong> {status}
-        </p>
-        <img src={imageUrl} alt={item} />
+        <img src={imageUrl} alt={item} loading="lazy" />
+        <span
+          className={`lost-and-found-status ${status === "Found" ? "found" : "lost"}`}
+        >
+          {status}
+        </span>
+        <span className="lost-and-found-category-badge">{category}</span>
       </div>
-      <div className="lost-and-found-card-header">
-        <h3 className="lost-and-found-item">{item}</h3>
-        <p className="lost-and-found-category">
-          <strong>Category:</strong> {category}
-        </p>
+      <div className="lost-and-found-card-content">
+        <h3 className="lost-and-found-card-title">{item}</h3>
+        {description ? (
+          <p className="lost-and-found-card-description">{description}</p>
+        ) : null}
       </div>
-      <div className="lost-and-found-card-body">
-        <div className="lost-and-found-locate">
-          <MapPin />
-          <p className="lost-and-found-location">
-            <strong>Location:</strong> {location}
-          </p>
-        </div>
-        <div className="lost-and-found-date-time">
-          <CalendarDays />
-          <p className="lost-and-found-date">
-            <strong>Date:</strong> {date}
-          </p>
-        </div>
+      <div className="lost-and-found-card-footer">
+        <span className="lost-and-found-locate">
+          <MapPin size={15} />
+          {location}
+        </span>
+        <span className="lost-and-found-date-time">
+          <CalendarDays size={15} />
+          {formatCardDate(date)}
+        </span>
       </div>
     </div>
   );
@@ -183,6 +192,7 @@ export function SkillExchangeCard({
   level,
   skills,
   description,
+  onConnect,
 }) {
   return (
     <div className="skill-exchange-card">
@@ -213,7 +223,7 @@ export function SkillExchangeCard({
         </p>
       </div>
       <div className="connect_button">
-        <button>Connect Now</button>
+        <button onClick={onConnect}>Connect Now</button>
       </div>
     </div>
   );

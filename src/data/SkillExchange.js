@@ -7,7 +7,9 @@ export const SkillExchangeData = [
     skills: ["JavaScript", "React", "Node.js"],
     imageUrl:
       "https://wallpapers.com/images/hd/professional-profile-pictures-1080-x-1080-460wjhrkbwdcp1ig.jpg",
-    description: "Computer Science, 2nd year"
+    description: "Computer Science, 2nd year",
+    email: "harnoor.singh@campus.edu",
+    linkedin: "harnoor-singh"
   },
   {
     id: 2,
@@ -17,7 +19,9 @@ export const SkillExchangeData = [
     skills: ["Python", "React", "Java"],
     imageUrl:
       "https://static.vecteezy.com/system/resources/thumbnails/048/378/879/small_2x/a-young-happy-pretty-smiling-professional-business-woman-free-photo.jpg",
-    description: "Computer Science, 1st year"
+    description: "Computer Science, 1st year",
+    email: "amanpreet.kaur@campus.edu",
+    linkedin: "amanpreet-kaur"
   },
   {
     id: 3,
@@ -27,7 +31,9 @@ export const SkillExchangeData = [
     skills: ["Ai", "React", "Java, c++"],
     imageUrl:
       "https://tse3.mm.bing.net/th/id/OIP.hs03TRDnHF7U2YAj7iEsbAHaLH?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
-    description: "Computer Science, 4th year"
+    description: "Computer Science, 4th year",
+    email: "harman@campus.edu",
+    linkedin: "harman"
   },
   {
     id: 4,
@@ -37,7 +43,9 @@ export const SkillExchangeData = [
     skills: ["Python", "React", "Java"],
     imageUrl:
       "https://static.vecteezy.com/system/resources/thumbnails/036/092/706/small_2x/ai-generated-portrait-of-successful-and-happy-businesswoman-in-office-smiling-and-looking-at-camera-with-crossed-arms-photo.jpg",
-    description: "Computer Science, 1st year"
+    description: "Computer Science, 1st year",
+    email: "ananya@campus.edu",
+    linkedin: "ananya"
   },
   {
     id: 5,
@@ -47,7 +55,9 @@ export const SkillExchangeData = [
     skills: ["react", "Java", "Python"],
     imageUrl:
       "https://tse2.mm.bing.net/th/id/OIP.C1QxfhxKco2RW2SGPdcFGQHaLH?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
-    description: "Computer Science, 1st year"
+    description: "Computer Science, 1st year",
+    email: "aarna@campus.edu",
+    linkedin: "aarna"
   },
   {
     id: 6,
@@ -57,7 +67,9 @@ export const SkillExchangeData = [
     skills: ["Full Stack Development", "React", "Node.js"],
     imageUrl:
       "https://img.freepik.com/premium-photo/young-professional-corporate-person_1146775-803.jpg",
-    description: "Computer Science, 4th year"
+    description: "Computer Science, 4th year",
+    email: "rahul@campus.edu",
+    linkedin: "rahul"
   },
   {
     id: 7,
@@ -67,6 +79,8 @@ export const SkillExchangeData = [
     skills: ["React", "Java"],
     imageUrl:
       "https://cdn.pixabay.com/photo/2015/08/05/10/42/andrew-ronalds-876138_1280.jpg",
-    description: "Computer Science, 1st year"
+    description: "Computer Science, 1st year",
+    email: "gian@campus.edu",
+    linkedin: "gian"
   }
 ];

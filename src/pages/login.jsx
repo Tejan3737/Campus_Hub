@@ -28,7 +28,7 @@ function StatusIcon({ valid }) {
 }
 
 export function Login() {
-  const [mode, setMode] = useState("login"); // 'login' or 'signup'
+  const [mode, setMode] = useState("login");
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
