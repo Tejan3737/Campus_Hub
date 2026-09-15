@@ -1631,7 +1631,7 @@ body {
   border-radius: 4px;
   height: 2.2rem;
   background-color: #b3541e;
-  font-weight: bolder;
+  transform: translateY(-5px);
 }
 .buy-fab {
   position: fixed;
@@ -1844,6 +1844,7 @@ body {
 }
 .connect_button button:hover {
     background: #b3541e;
+    transform: translateY(-5px);
 }
 .connect-modal-body {
     display: flex;
@@ -2077,6 +2078,7 @@ body {
 }
 .reg-register:hover {
     background: var(--primary);
+    transform: translateY(-5px);
 }
 .reg-registered {
     background: rgba(21, 185, 24, 0.15);
