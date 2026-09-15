@@ -74,9 +74,9 @@ export const SkillExchangeData = [
   {
     id: 7,
     person_name: "Shivansh",
-    level_rating: "3.6",
+    level_rating: "5.0",
     level: "Easy",
-    skills: ["React", "Java"],
+    skills: ["React", "Java", "Python", "C", "C++"],
     imageUrl:
       "https://cdn.pixabay.com/photo/2015/08/05/10/42/andrew-ronalds-876138_1280.jpg",
     description: "Computer Science, 1st year",
