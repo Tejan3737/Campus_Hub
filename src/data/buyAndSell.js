@@ -1,3 +1,4 @@
+import pythonBook from "../assets/Python.jpeg";
 export const BuyandSell = [
   {
     id: 1,
@@ -26,7 +27,7 @@ export const BuyandSell = [
     price: 1200,
     condition: "Good",
     seller: "Aman Verma",
-    image: "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85",
+    image: "https://imgs.search.brave.com/lGHuVLwORfO9n093Q35_pN9o6VHDZgUlbH1bdaXhrrU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/ZnVybmlzZWxhbi5j/b20vY2RuL3Nob3Av/ZmlsZXMva2lkZGkt/d29vZGVuLXN0dWR5/LWxhcHRvcC10YWJs/ZS13aXRoLWNoYWly/LWZvci1raWRzLTg5/NTk4MzRfNjAweC5q/cGc_dj0xNzYxODcz/Njc4",
     description: "Compact study table suitable for a hostel room."
   },
   {
@@ -56,7 +57,7 @@ export const BuyandSell = [
     price: 800,
     condition: "Good",
     seller: "Neha Gupta",
-    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
+    image: "https://imgs.search.brave.com/kzJlYH2HPn47Pdx2dQY_EhbDjGSYVy9WciCZ5yw1DKE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMubG9veC5pby91/cGxvYWRzLzIwMjYv/NS8zMC9VT1duSDhE/OWdfbWlkLmpwZw",
     description: "Single bed mattress in good condition."
   },
   {
@@ -76,7 +77,7 @@ export const BuyandSell = [
     price: 500,
     condition: "Like New",
     seller: "Riya Kapoor",
-    image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46",
+    image: "https://imgs.search.brave.com/BTq2BavZ-QhWeNJ5ThUNiFC_YeLMjNfLkOXerz5FQ7w/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9kZW9k/YXAuaW4vY2RuL3No/b3AvZmlsZXMvMDFf/ZWM0MzUwNTMtMjYx/NS00Y2MzLTk5NTIt/NzBhNjk1ODY4ZWY3/LmpwZz92PTE3Mzc2/MjA2OTAmd2lkdGg9/MTQ0NQ",
     description: "Adjustable laptop stand for studying."
   },
   {
@@ -106,7 +107,7 @@ export const BuyandSell = [
     price: 300,
     condition: "Good",
     seller: "Mohit Kumar",
-    image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f",
+    image: "https://imgs.search.brave.com/x6Q42ODmKH8LbK32gHQP7F4PWGl2SdMBpj_2cmWwZvA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFyZTF4VHErK0wu/anBn",
     description: "Drawing board for architecture and design students."
   },
   {
@@ -116,7 +117,7 @@ export const BuyandSell = [
     price: 450,
     condition: "Like New",
     seller: "Ananya Gupta",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
+    image: pythonBook,
     description: "Beginner friendly Python programming book."
   },
   {
@@ -141,7 +142,7 @@ export const BuyandSell = [
   },
   {
     id: 15,
-    title: "College Hoodie",
+    title: "Hoodie",
     category: "Clothing",
     price: 650,
     condition: "Good",
@@ -156,7 +157,7 @@ export const BuyandSell = [
     price: 450,
     condition: "Like New",
     seller: "Tanya Verma",
-    image: "https://images.unsplash.com/photo-1618410320928-25228d811631",
+    image: "https://imgs.search.brave.com/-3-wqbT1b1KEWxMTKldyy43NlZgwcrFax5PJxiziv_k/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL2hnUUFB/ZVN3Vk5WcC1qRWYv/cy1sNDAwLndlYnA",
     description: "64GB USB flash drive with high storage capacity."
   },
   {
@@ -186,7 +187,7 @@ export const BuyandSell = [
     price: 1200,
     condition: "Good",
     seller: "Aditya Singh",
-    image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04",
+    image: "https://imgs.search.brave.com/H8EBSva4c9uPdGR9tOurmogb8Qn5vVIKeHGQtRKA92E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jYW1v/LmNvbS9yZXMvcmVp/bmN1YmF0ZS9pL3By/b2R1Y3RzL2NhbW8v/Y29tcGF0aWJpbGl0/eS93ZWJjYW0ucG5n",
     description: "HD webcam suitable for online classes and meetings."
   },
   {
